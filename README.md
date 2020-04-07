@@ -46,4 +46,5 @@ React的學習Project
    StyleRoot with Media Queries
 4. Install Styled Components
    styled.button`css code`
+   pass props dynamic change css style
 
