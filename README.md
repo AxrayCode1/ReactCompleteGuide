@@ -6,6 +6,7 @@ React的學習Project
 - [Props & State](#props-and-state)
 - [Basic Style](#basic-style)
 - [Lists](#sending-feedback)
+- [Style](#style)
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
   - [npm start](#npm-start)
@@ -125,7 +126,20 @@ React的學習Project
 ## Lists
 
 1. 使用 ES6 Spreed Operator 來複製 State
-2. 使用 ES6 Array Map 方式來產生 List 的 JSX code
+2. Data Change without Mutation
+3. 使用 ES6 Array Map 方式來產生 List 的 JSX code
+
+## Style
+
+1. Inline Code 動態更換 css style
+2. 動態更換 className
+   ex: let classes = ['red','bold'].join(' ');
+   className={classes}
+3. Install Radum
+   Inline styles with pseudo selector
+   StyleRoot with Media Queries
+4. Install Styled Components
+   styled.button`css code`
 
 ## Available Scripts
 
