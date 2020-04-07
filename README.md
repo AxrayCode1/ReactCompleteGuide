@@ -106,9 +106,9 @@ React的學習Project
 
 1. 單純的Javacript寫出像html的格式
 2. React會轉換JSX code如下
-   JSX : <div className="App">
-          <h1>Does this work now?</h1>
-         </div>
+   JSX : (< div className="App" >
+          < h1 >Does this work now?< / >
+         < /div >)
    轉換成 React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
 
 ## Props And State
