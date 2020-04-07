@@ -2,9 +2,9 @@ React的學習Project
 
 
 ## Table of Contents
-- [JSX] (#jsx)
+- [JSX](#jsx)
 - [Props & State](#props-and-state)
-- [Basic Style] (#basic-style)
+- [Basic Style](#basic-style)
 - [Lists](#sending-feedback)
 - [Folder Structure](#folder-structure)
 - [Available Scripts](#available-scripts)
