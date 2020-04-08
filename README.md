@@ -7,6 +7,7 @@ React的學習Project
 - [Basic Style](#basic-style)
 - [Lists](#sending-feedback)
 - [Style](#style)
+- [Split into more components](#split)
 
 
 ## JSX
@@ -48,4 +49,9 @@ React的學習Project
    styled.button`css code`
    pass props dynamic change css style
 5. CSS Modules
+
+## Split into more components
+
+1. Organize Folder Structure
+2. 實作於 App.js 切割成多個 Component
 
