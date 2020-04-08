@@ -53,5 +53,5 @@ React的學習Project
 ## Split into more components
 
 1. Organize Folder Structure
-2. 實作於 App.js 切割成多個 Component
+2. 實作於 App.js 內的JSX Code 切割成多個 Component
 
