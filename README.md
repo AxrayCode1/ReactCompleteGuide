@@ -10,7 +10,11 @@ React的學習Project
 - [Split into more components](#split)
 - [Creation Life Cycle](#creation-life-cycle)
 - [Update Life Cycle](#update-life-cycle)
-
+- [React Hook - useEffect](#useEffect)
+- [shouldComponentUpdate](#shouldComponentUpdate)
+- [Reac.memo](#React.memo)
+- [PureComponent](#pure-component)
+- [Rendering Adjacent JSX Elements](#adjacent)
 
 ## JSX
 
@@ -71,3 +75,36 @@ React的學習Project
    c. render
    d. getSnapshotBeforeUpdate
    e. componentDidUpdate => can side effect
+
+## React Hook - useEffect
+1. Combind componentDidMount & componentDidUpdate
+2. second argument to control if execute useEffect
+   ex: useEffect(()=>{
+
+   },[count])
+   count有變化時才會觸發useEffect
+
+3. second argument empty array => componentDidMount 只會運行一次
+4. cleanup => componentWillUnmount
+   useEffect(()=>{
+      return () =>{
+         cleanup code...
+      }
+   },[])
+
+## shouldComponentUpdate
+1. use shouldComponentUpdate for optimization class component
+
+## React.memo
+1. React.memo for optimization function component
+
+## PureComponent
+1. use PureComponent instead of shouldComponentUpdate
+
+## Rendering Adjacent JSX Elements
+1. use array or Aux Component
+ 　<Aux>
+      < h1 >xxxx< /h1 >
+      < p >xxxx< /p >
+   </Aux>
+2. use React.Fragment

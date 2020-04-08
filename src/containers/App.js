@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import classes from  './App.css';
 import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
+import withClass from '../hoc/withClass';
+import Aux from '../hoc/Auxilliary';
 
 // const StyledButoon = styled.button`
 //   background-color: ${props => props.alt ? 'red' : 'green'};
@@ -29,7 +31,8 @@ class App extends Component {
       { id:'av', name: 'Stephanie', age: 26 }
     ],
     otherState: 'some other value',
-    showPersons: false
+    showPersons: false,
+    showCockpit: true
   }
 
   static getDerivedStateFromProps(props, state) {
@@ -84,10 +87,15 @@ class App extends Component {
     this.setState({showPersons: !doesShow});
   }
 
+  toggleCockpitHandler = () => {
+    const doesShow = this.state.showCockpit;
+    this.setState({showCockpit: !doesShow});
+  }
+
   render () {  
     console.log('[App.js] render');
     let persons = null;
-
+    let cockpit = null;
     if(this.state.showPersons){
       persons = <Persons 
         persons={this.state.persons} 
@@ -95,19 +103,23 @@ class App extends Component {
         changed={this.nameChangedHandler} />          
       ;
     }
+    if(this.state.showCockpit){
+      cockpit=<Cockpit 
+        title={this.props.appTitle}
+        personsLength={this.state.persons.length} 
+        showPersons={this.state.showPersons} 
+        clicked={this.togglePersonsHandler}/>
+    }
 
     return (      
-      <div className={classes.App}>
-        <Cockpit 
-          title={this.props.appTitle}
-          persons={this.state.persons} 
-          showPersons={this.state.showPersons} 
-          clicked={this.togglePersonsHandler}/>
+      <Aux>
+        <button onClick={this.toggleCockpitHandler}>Toggle Cockpit</button>
+        {cockpit}
         {persons}
-      </div>        
+      </Aux>        
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));
   }
 }
 
-export default App;
+export default withClass(App, classes.App);
