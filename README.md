@@ -8,6 +8,8 @@ React的學習Project
 - [Lists](#sending-feedback)
 - [Style](#style)
 - [Split into more components](#split)
+- [Creation Life Cycle](#creation-life-cycle)
+- [Update Life Cycle](#update-life-cycle)
 
 
 ## JSX
@@ -55,3 +57,17 @@ React的學習Project
 1. Organize Folder Structure
 2. 實作於 App.js 內的JSX Code 切割成多個 Component
 
+## Creation Life Cycle
+1. Life Cycle
+   a. constructor
+   b. getDerivedStateFromProps
+   c. render
+   d. componentDidMount => can side effect
+
+## Update Life Cycle
+1. Life Cycle
+   a. getDerivedStateFromProps
+   b. shouldComponentUpdate
+   c. render
+   d. getSnapshotBeforeUpdate
+   e. componentDidUpdate => can side effect
