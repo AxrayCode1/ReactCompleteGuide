@@ -11,13 +11,14 @@ React的學習Project
 - [Update Life Cycle](#update-life-cycle)
 - [React Hook - useEffect](#useEffect)
 - [shouldComponentUpdate](#shouldComponentUpdate)
-- [Reac.memo](#React.memo)
+- [React.memo](#react-memo)
 - [PureComponent](#pure-component)
 - [Rendering Adjacent JSX Elements(HOC)](#adjacent)
 - [setState With prevState](#setState-prevState)
 - [PropType](#prop-type)
 - [Refs](#refs)
 - [Refs with React Hook](#refs-react-hook)
+- [Prop Chain Problem](#prop-chain-problem)
 
 ## JSX
 
@@ -141,3 +142,5 @@ React的學習Project
 ## Refs with React Hook
 1. In function component use useRef to ref dom
 2. Then you can use ref dom in useEffect
+
+## Prop Chain Problem
