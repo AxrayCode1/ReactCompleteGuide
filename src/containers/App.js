@@ -4,6 +4,7 @@ import Persons from '../components/Persons/Persons';
 import Cockpit from '../components/Cockpit/Cockpit';
 import withClass from '../hoc/withClass';
 import Aux from '../hoc/Auxilliary';
+import AuthContext from '../context/auth-context';
 
 // const StyledButoon = styled.button`
 //   background-color: ${props => props.alt ? 'red' : 'green'};
@@ -110,7 +111,7 @@ class App extends Component {
         persons={this.state.persons} 
         clicked={this.deletePersonHandler} 
         changed={this.nameChangedHandler} 
-        isAuth={this.state.authenticated}/>          
+        />          
       ;
     }
     if(this.state.showCockpit){
@@ -119,14 +120,20 @@ class App extends Component {
         personsLength={this.state.persons.length} 
         showPersons={this.state.showPersons} 
         clicked={this.togglePersonsHandler}
-        login={this.loginHandler}/>
+        />
     }
 
     return (      
       <Aux>
         <button onClick={this.toggleCockpitHandler}>Toggle Cockpit</button>
-        {cockpit}
-        {persons}
+        <AuthContext.Provider 
+          value={{
+            authenticated: this.state.authenticated, 
+            login: this.loginHandler
+            }}>
+          {cockpit}
+          {persons}
+        </AuthContext.Provider>
       </Aux>        
     );
     // return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work now?'));

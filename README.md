@@ -144,3 +144,11 @@ React的學習Project
 2. Then you can use ref dom in useEffect
 
 ## Prop Chain Problem
+1. Use Context API
+   a. use React.createContext to create context
+   b. 使用<AuthContext.Provider>來覆蓋想使用context的component，必且初始化context裡的值
+   c. 使用<AuthContext.Consumer>來取得context的值
+2. Use contextType for class based component
+   a. 宣告 static contextType 指向你所要的 context
+   b. 之後使用 this.context.xxx 取的所需要的值
+3. useContext for function based component
