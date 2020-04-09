@@ -1,6 +1,5 @@
 React的學習Project
 
-
 ## Table of Contents
 - [JSX](#jsx)
 - [Props & State](#props-and-state)
@@ -14,7 +13,11 @@ React的學習Project
 - [shouldComponentUpdate](#shouldComponentUpdate)
 - [Reac.memo](#React.memo)
 - [PureComponent](#pure-component)
-- [Rendering Adjacent JSX Elements](#adjacent)
+- [Rendering Adjacent JSX Elements(HOC)](#adjacent)
+- [setState With prevState](#setState-prevState)
+- [PropType](#prop-type)
+- [Refs](#refs)
+- [Refs with React Hook](#refs-react-hook)
 
 ## JSX
 
@@ -101,10 +104,40 @@ React的學習Project
 ## PureComponent
 1. use PureComponent instead of shouldComponentUpdate
 
-## Rendering Adjacent JSX Elements
+## Rendering Adjacent JSX Elements(HOC)
 1. use array or Aux Component
  　<Aux>
       < h1 >xxxx< /h1 >
       < p >xxxx< /p >
    </Aux>
 2. use React.Fragment
+
+## setState With prevState
+1. Setting State Correctly
+   setState((prevState,props)=>{
+      return {
+        counter:prevState.counter + 1
+      }
+   })
+
+## PropType
+1. npm install --save prop-types
+2. 可以定義 prop 是屬於哪種 type (string,number,func...)
+
+## Refs
+1. Class based JSX use ref can assign a element to input, then you can control this element in componentDidMount
+    ex: 
+    <input 
+      type="text"
+      ref={(inputEl)=>{this.inputElement= inputEl}}
+      onChange={this.props.changed} 
+      value={this.props.name} 
+    />
+
+    this.inputElement.focus()
+2. Use this.inputElementRef = React.createRef() in constructor
+   , then in JSX code <input ref={this.inputElementRef}...
+
+## Refs with React Hook
+1. In function component use useRef to ref dom
+2. Then you can use ref dom in useEffect
